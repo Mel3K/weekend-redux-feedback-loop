@@ -1,9 +1,18 @@
-function Comments() {
-return  (
-<p>
- Hello, Here's the comment part. 
+import { useHistory } from "react-router-dom";
 
-</p>
+
+
+function Comments() {
+    const history = useHistory()    
+    const nextPage = (event) =>{
+     event.preventDefault();  
+    console.log('mel');
+    history.push("/review")
+    
+    }
+return  (
+
+<button onClick={nextPage}>Next Page</button>
 )
 };
  

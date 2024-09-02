@@ -14,9 +14,12 @@ router.post('/', (req, res) => {
 router.get('/', (req, res) => {
     console.log('testing')
     const sqlText = `SELECT * FROM "feedback" ORDER BY "id"`;
-    pool.query(sqlText).then(result => {
+    pool.query(sqlText)
+    .then(result => {
+      
         res.send(result.rows)
-    }).catch(err => {
+    })
+    .catch(err => {
         console.log(err);
         res.sendStatus(500);
     })
