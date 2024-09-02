@@ -13,8 +13,11 @@ import { useHistory } from "react-router-dom";
 
 
 function App() {
-
-
+  const nextPage = (event) =>{
+    event.preventDefault();
+    console.log('app.jsx function');
+    history.push("/understanding")
+  };
 
   return (
     <>
@@ -35,6 +38,8 @@ function App() {
           <Review />
         </Route>
 
+
+)
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Feedback!</h1>
@@ -44,17 +49,14 @@ function App() {
           <p>Here I put the route to change the db</p>
 
          <button onClick={nextPage}>Next</button>
-
+         <Supported/>
 
       <Understanding/>
-      <h1>Do you feel supported</h1>
-      <Supported/>
-      <h1> Any comments you wish to share</h1>
+      
       <Comments/>
-      <h1>Review your selections</h1>
+    
       <Review/>
 
-   
     </div>
     </Router>
     </>
