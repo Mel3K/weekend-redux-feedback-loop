@@ -7,7 +7,7 @@ function Comments() {
     const nextPage = (event) =>{
      event.preventDefault();  
     console.log('comment function');
-    history.push("/review")
+    history.push("./review")
     
     }
 return  (
