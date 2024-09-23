@@ -47,11 +47,12 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
           <h2>How are you feeling today? </h2>
-          <p>Here I put the route to change the db</p>
 
-         <button onClick={nextPage}>Next</button>
+          <p></p>
+
+          <button onClick={nextPage}>Next</button>
          <Supported/>
-
+         
       <Understanding/>
       
       <Comments/>

@@ -13,8 +13,8 @@ function Review() {
         <>
     <p>
      Hello, Here's where we want to review our answers. </p>
-     <input>we want to show all from the db inputs, SELECT from feedback
-     </input>
+     {/* <input>'we want to show all from the db inputs, SELECT from feedback
+     </input> */}
 
      <button onSubmit={nextPage}>Submit Answers</button>
      
