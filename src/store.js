@@ -19,10 +19,10 @@ const understandingReducer = (state= [], action) => {
     return state;
 }
 
-const supportReducer = (state= [], action) => {
-    if (action.type === "SET_SUPPORT") {
+const supportedReducer = (state= 0, action) => {
+    if (action.type === "SET_SUPPORTED") {
         const newSupport = action.payload
-        return [...state, newSupport]
+        return newSupport
 
     }
     return state;
@@ -38,15 +38,6 @@ const commentsReducer = (state= [], action) => {
 }
 
 
-const reviewReducer = (state= [], action) => {
-    if (action.type === "SET_REVIEW") {
-        const newReview = action.payload
-        return [...state,newReview]
-            //  ,newFeeling, newUnderstanding, newSupport, newComments])
-
-    }
-    return state;
-}
 
 
 
@@ -62,7 +53,7 @@ const reviewReducer = (state= [], action) => {
     const store = createStore(
     
         combineReducers({
-          commentsReducer, feelingsReducer, understandingReducer, reviewReducer, supportReducer// :point_left: Be sure to replace this, too! 
+          commentsReducer, feelingsReducer, understandingReducer, supportedReducer// :point_left: Be sure to replace this, too! 
         }),
         applyMiddleware(logger),
       );

@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 // import Box from '@mui/material/Box';
@@ -21,7 +21,7 @@ const Comments= () => {
     
     const feedback = useSelector((store) => store.commentsReducer);
 
-    const[ getReply, setGetReply] = useState(0);
+    const[ getReply, setGetReply] = useState("");
 
 
     const handleSubmit = () => {

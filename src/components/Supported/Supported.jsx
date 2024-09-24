@@ -17,7 +17,7 @@ const Supported = () => {
   const dispatch = useDispatch();
     const history = useHistory();
 
-    const feedback = useSelector((store) => store.supportedReducer);
+ 
 
     const [getReply, setGetReply] = useState(0);
 
@@ -38,7 +38,7 @@ const Supported = () => {
          <input
          data-testid="input"
                         type='number'
-                        vaule={getReply}
+                        value={getReply}
                         onChange={(event) => setGetReply(event.target.value)} />
                 </form>
                 <button onClick={handleSubmit} type='submit'>Next</button>
