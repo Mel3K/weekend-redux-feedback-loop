@@ -9,7 +9,7 @@ const Feeling = () => {
 
 
     const feedback = useSelector((store ) => store.feelingReducer);
-    
+
 
     const [getReply, setGetReply] = useState(0)
 
@@ -27,7 +27,7 @@ history.push('/understanding')
 return (
     <>
     <div>
-    <h2>How are you feeling today? </h2>
+    <h2>How well are you understanding the content? </h2>
     <form onSubmit= {handleSubmit} className= "add-feedback">
     <input
                         data-testid="input"

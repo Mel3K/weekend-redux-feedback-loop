@@ -38,7 +38,7 @@ const Comments= () => {
  
 return  (
     <div>
-    <h2>Do you have any comments</h2>
+    <h2>Any comments you want to leave?</h2>
     <form onSubmit= {handleSubmit} className="add-comments">
        <input
        data-testid="input"

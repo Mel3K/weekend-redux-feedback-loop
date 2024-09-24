@@ -25,15 +25,15 @@ const Review= () => {
 
     return  (
         <div>
-      <h2>Do you feel supported</h2>
-      <form onSubmit= {handleSubmit} className="add-comments">
-         <input
-         data-testid="input"
-                        type=''
-                        vaule={getReply}
-                        onChange={(event) => setGetReply(event.target.value)} />
-                </form>
-                <button onClick={handleSubmit} type='submit'>Next</button>
+      <h2>Review your answers</h2>
+      
+         <ul> answer from feelings --#</ul>
+         <ul> answer from understanding --#</ul>
+         <ul> answer from supported --#</ul>
+         <ul> answer from comments -- ""</ul>
+         <ul> answer from Review -- all of the above</ul>
+
+                <button onClick={handleSubmit} type='submit'>Home</button>
               
    </div>
    

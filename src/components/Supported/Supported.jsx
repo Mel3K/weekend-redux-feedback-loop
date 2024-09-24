@@ -33,11 +33,11 @@ const Supported = () => {
     
     return  (
     <div>
-      <h2>Do you feel supported</h2>
-      <form onSubmit= {handleSubmit} className="add-comments">
+      <h2>How well are you being supported?</h2>
+      <form onSubmit= {handleSubmit} className="add-supported">
          <input
          data-testid="input"
-                        type=''
+                        type='number'
                         vaule={getReply}
                         onChange={(event) => setGetReply(event.target.value)} />
                 </form>

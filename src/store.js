@@ -41,7 +41,8 @@ const commentsReducer = (state= [], action) => {
 const reviewReducer = (state= [], action) => {
     if (action.type === "SET_REVIEW") {
         const newReview = action.payload
-        return [...state, newReview]
+        return [...state,newReview]
+            //  ,newFeeling, newUnderstanding, newSupport, newComments])
 
     }
     return state;
