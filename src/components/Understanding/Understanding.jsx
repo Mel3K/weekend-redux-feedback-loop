@@ -5,29 +5,44 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import {useState} from "react";
+import { useDispatch, useSelector } from 'react-redux';
 
-function Understanding() {
+const Understanding = () => {
+    const dispatch = useDispatch();
     const history = useHistory()
-    const nextPage = (event) => {
-        event.preventDefault();
-        console.log('understanding function');
-        history.push("/supported")
+
+    const feedback = useSelector((store ) => store.understandingReducer)
+
+    const [getReply, setGetReply] = useState(0)
+
+    const handleSubmit = () => {
+     dispatch (
+        {
+            type: "SET_UNDERSTANDING",
+            payload: getReply
+
+        })
+        history.push('/supported')
+    }
+    
 
     
     return (
         <>
-       <h3>Do you understand the material?</h3> 
-       <input> <MenuItem value={1}>1</MenuItem>
-        <MenuItem value={2}>2</MenuItem>
-        <MenuItem value={3}>3</MenuItem>
-         <MenuItem value={4}>4</MenuItem>
-         <MenuItem value={5}>5</MenuItem></input>     
-
-        < button onClick = { nextPage } >Next Page</button>
-        </>
+        <div>
+        <h2>How do you understand the material? </h2>
+        <form onSubmit= {handleSubmit} className= "add-feedback">
+        <input
+                            data-testid="input"
+                            type='number'
+                            vaule={getReply}
+                            onChange={(event) => setGetReply(event.target.value)} />
+                    </form>
+                    <button onClick={handleSubmit} type='submit'>Next</button>
+                    </div>
+            </>
         )
-};
-};
+    }
  
  
     export default Understanding;

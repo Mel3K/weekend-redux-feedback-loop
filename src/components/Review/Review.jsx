@@ -6,7 +6,7 @@ function Review() {
     const nextPage = (event) => {
         event.preventDefault();
         console.log('review function ');
-        history.push("/")
+        history.push("/review")
 
     }
     return  (
