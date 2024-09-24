@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-
+import { useHistory } from "react-router-dom";
 
 
 // import Box from '@mui/material/Box';
@@ -18,7 +17,7 @@ const Supported = () => {
   const dispatch = useDispatch();
     const history = useHistory();
 
-    const feedback = useSelector((store) =>store.supportedReducer);
+    const feedback = useSelector((store) => store.supportedReducer);
 
     const [getReply, setGetReply] = useState(0);
 
@@ -34,7 +33,7 @@ const Supported = () => {
     
     return  (
     <div>
-      <h2>Do you want to share any comments</h2>
+      <h2>Do you feel supported</h2>
       <form onSubmit= {handleSubmit} className="add-comments">
          <input
          data-testid="input"

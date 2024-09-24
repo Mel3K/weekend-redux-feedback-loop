@@ -1,26 +1,42 @@
-import { useHistory } from "react-router-dom";
+
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
-function Review() {
-    const history = useHistory()
-    const nextPage = (event) => {
-        event.preventDefault();
-        console.log('review function ');
-        history.push("/review")
+const Review= () => {
+    const history = useHistory();
+    const dispatch = useDispatch();
 
-    }
+    const feedback = useSelector((store) => store.reviewReducer);
+
+    const[getReply, setGetReply] = useState(0);
+
+
+    const handleSubmit = () => {
+        dispatch (
+          {
+            type: "SET_REVIEW",
+            payload: getReply
+          })
+        history.push('/feelings')
+      }
+  
+
     return  (
-        <>
-    <p>
-     Hello, Here's where we want to review our answers. </p>
-     {/* <input>'we want to show all from the db inputs, SELECT from feedback
-     </input> */}
-
-     <button onSubmit={nextPage}>Submit Answers</button>
-     
-    
+        <div>
+      <h2>Do you feel supported</h2>
+      <form onSubmit= {handleSubmit} className="add-comments">
+         <input
+         data-testid="input"
+                        type=''
+                        vaule={getReply}
+                        onChange={(event) => setGetReply(event.target.value)} />
+                </form>
+                <button onClick={handleSubmit} type='submit'>Next</button>
+              
+   </div>
    
-    </>
     )
     };
      

@@ -1,39 +1,55 @@
+
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+
+
+// import Box from '@mui/material/Box';
+// import InputLabel from '@mui/material/InputLabel';
+// import MenuItem from '@mui/material/MenuItem';
+// import FormControl from '@mui/material/FormControl';
+// import Select from '@mui/material/Select';
 
 
 
 
 
 
-function Comments() {
-    const history = useHistory()    
-    const nextPage = (event) =>{
-     event.preventDefault();  
-    console.log('comment function');
-    history.push("./review")
+const Comments= () => {
+    const history = useHistory();
+    const dispatch = useDispatch();
     
+    const feedback = useSelector((store) => store.commentsReducer);
+
+    const[ getReply, setGetReply] = useState(0);
+
+
+    const handleSubmit = () => {
+        dispatch (
+            {
+                type: "SET_COMMENTS",
+                payload: getReply
+
+            }
+        )
+        history.push('/review')
     }
-    function handleChange (event) {
  
  
 return  (
-    <>
-
-    <h3>Do you have any comments?</h3>
-    <input>put db input here from comments 1-5
-    SELECT from feedback, comments</input>
-
-    
-
-<button onClick={nextPage}>Next Page</button>
-</>
+    <div>
+    <h2>Do you have any comments</h2>
+    <form onSubmit= {handleSubmit} className="add-comments">
+       <input
+       data-testid="input"
+                      type=''
+                      vaule={getReply}
+                      onChange={(event) => setGetReply(event.target.value)} />
+              </form>
+              <button onClick={handleSubmit} type='submit'>Next</button>
+            
+ </div>
 )
-};
-}; 
+}
 
 export default Comments;
